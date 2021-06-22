@@ -12,11 +12,13 @@ code {
     monospace;
 }
 .textField{
- background-color: yellow;
-  padding: 5rem 10rem;
+ 
+  padding: 5px 10px;
   max-width: 300px;
-
+  align-self: center;
+margin: auto;
 }
+
 h1{
   padding: 50px 0rem;
   margin: auto;
