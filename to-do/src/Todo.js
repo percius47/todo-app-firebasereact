@@ -6,7 +6,7 @@ import './Todo.css'
 
 
 
-export default function TodoListItem({todo, inprogress,timestamp, id}) {
+export default function TodoListItem({todo, inprogress, id}) {
 
 function toggleProgress(){
 db.collection("entries_todo").doc(id).update({
@@ -24,9 +24,8 @@ function deleteTodo()
 
     return (
         <div style={{display:"flex"}}>
-           
-          <ListItem className="listItem">
-                <ListItemText  primary={todo} secondary={inprogress ? "In Progress":"Completed"}/>            
+          <div className="div-parent" style={{display:"flex" }}>  <ListItem className="listItem">
+                <ListItemText  primary={todo} secondary={inprogress ? "In Progress" :"Done"}/>            
             </ListItem>
 
             <button  className="list-button" onClick={toggleProgress}>
@@ -34,6 +33,6 @@ function deleteTodo()
 
             <button className="list-button" onClick={deleteTodo}> X  </button>
         </div>
-        
+        </div>
     )
 }
