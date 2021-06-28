@@ -34,5 +34,14 @@ h1{
 }
 #filled-basic{
   background-color:  #34D399;
-  
+  border-radius: 0.3rem;
+}
+.butt{
+background-color: black;
+color: var(--primary-color);
+border:none;
+font-size: xx-large;
+
+
+
 }
