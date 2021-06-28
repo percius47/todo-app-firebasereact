@@ -13,10 +13,11 @@ code {
 }
 .textField{
  
-  padding: 5px 10px;
+   padding: 5px 10px;
   max-width: 300px;
   align-self: center;
-margin: auto;
+margin: auto; 
+
 }
 
 h1{

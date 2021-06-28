@@ -1,0 +1,9 @@
+.listItem{
+
+    margin-right: 2rem;
+    margin-top: 1rem;
+    background-color: var(--primary-color);
+}
+:root{
+    --primary-color: #34D399;
+}
