@@ -1,9 +1,26 @@
-.listItem{
+.div-parent{
+    width: 25rem;
+}
 
+
+
+.listItem{
+    width: 200px;
+    
     margin-right: 2rem;
     margin-top: 1rem;
     background-color: var(--primary-color);
+    border-radius: 0.5rem;
 }
-:root{
-    --primary-color: #34D399;
+
+.list-button{
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    border: none;
+    color: var(--primary-color);
+    background-color: black;
+
+    width: 150px;
+
 }

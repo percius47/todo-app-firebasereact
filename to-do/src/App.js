@@ -58,10 +58,8 @@ function App() {
       <h1>Prashant's to-do App</h1>
   
     <form>
-    
-      <TextField 
-      id="standard-basic"   
-      label="To-Do" 
+    <TextField id="filled-basic" label="To-do" variant="filled"
+       
       style={{ width: "90vw", maxWidth: "500px" }}
       value={todoinput}
       onChange={(e)=>settodoInput(e.target.value)}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListItem,ListItemText } from '@material-ui/core'
-import {Button} from '@material-ui/core'
+
 import { db } from './firebase_config'
 import './Todo.css'
 
@@ -24,12 +24,15 @@ function deleteTodo()
 
     return (
         <div style={{display:"flex"}}>
-            <ListItem className="listItem">
+          <div className="div-parent" style={{display:"flex" }}>  <ListItem className="listItem">
                 <ListItemText  primary={todo} secondary={inprogress ? "In Progress" :"Done"}/>            
             </ListItem>
 
-            <Button onClick={toggleProgress}>{inprogress?"Done":"Undone"}</Button>
-            <Button onClick={deleteTodo}> X  </Button>
+            <button  className="list-button" onClick={toggleProgress}>
+                {inprogress?"Done":"Undone"}</button>
+
+            <button className="list-button" onClick={deleteTodo}> X  </button>
+        </div>
         </div>
     )
 }
