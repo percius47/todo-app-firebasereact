@@ -3,10 +3,10 @@ import './App.css';
 import TextField from '@material-ui/core/TextField';
 import {useState} from 'react';
 import { useEffect } from 'react';
-import Button from '@material-ui/core/Button'
 import { db } from './firebase_config';
 import firebase from "firebase";
 import TodoListItem from './Todo';
+import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 function App() {
   const [todos, setTodos] = useState([])
   const [todoinput, settodoInput]=useState("");
@@ -34,12 +34,18 @@ function App() {
   {
     e.preventDefault();
     console.log(`adding to-do`);
+    if(todoinput==="")
+      {}
+
+    else
+    {
     db.collection("entries_todo").add(
       {
         inprogress: true,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         todo: todoinput
       });
+    }
   }
 
   return (
@@ -56,19 +62,20 @@ function App() {
       >
 
       <h1>Prashant's to-do App</h1>
-  
-    <form>
+  <div style={{display:"flex"}}>
+    
     <TextField id="filled-basic" label="To-do" variant="filled"
        
-      style={{ width: "90vw", maxWidth: "500px" }}
+      style={{ width: "90vw", maxWidth: "500px"}}
       value={todoinput}
+      autoComplete="off"
       onChange={(e)=>settodoInput(e.target.value)}
       />
-    <Button type= "submit"variant="contained"
+    < button
      onClick={addTodo} 
-    style={{display:"none"}}>Default</Button>
-       
-        </form>
+    ><AddOutlinedIcon className="butt"/></button>
+       </div>
+        
 
    <div
    style={{
@@ -80,6 +87,7 @@ function App() {
       <TodoListItem 
       todo={todo.todo} 
       inprogress={todo.inprogress} 
+      timestamp={todo.timestamp}
       id={todo.id}/>
     ))   }
    </div>
