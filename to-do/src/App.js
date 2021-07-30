@@ -68,7 +68,7 @@ function App() {
    <div style={{display:"flex"}}>
     <TextField id="filled-basic" label="To-do" variant="filled"
        autoComplete="off"
-      style={{ width: "90vw", maxWidth: "500px" }}
+      style={{ width: "90vw", maxWidth: "500px", border: "none" }}
       value={todoinput}
       onChange={(e)=>settodoInput(e.target.value)}
       />
