@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ListItem,ListItemText } from '@material-ui/core'
 
 import { db } from './firebase_config'
@@ -7,11 +7,16 @@ import './Todo.css'
 
 
 export default function TodoListItem({todo, inprogress, id}) {
+    const [done,setDone]=useState(todo);
 
 function toggleProgress(){
 db.collection("entries_todo").doc(id).update({
-
+    
     inprogress: !inprogress
+
+  
+    
+    
 })
 
 }//toggle

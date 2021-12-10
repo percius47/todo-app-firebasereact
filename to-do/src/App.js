@@ -41,6 +41,7 @@ function App() {
 
     else
     {
+      console.log(todoinput);
     db.collection("entries_todo").add(
       {
         inprogress: true,
@@ -73,7 +74,7 @@ function App() {
       onChange={(e)=>settodoInput(e.target.value)}
       />
     <button className="butt"variant="contained"
-    
+    style={{cursor: "pointer"}}
      onClick={addTodo} 
     ><AddOutlinedIcon/></button>
        </div>
